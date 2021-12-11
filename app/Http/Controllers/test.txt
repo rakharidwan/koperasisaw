@@ -1,0 +1,87 @@
+// $pinjaman = Peminjaman::where('id_peminjaman',$id)->join('pinjamans','peminjamans.id_pinjaman','=','pinjamans.id_pinjaman')->first();
+        // $anggota = Anggota::where('id_anggota',$pinjaman->peminjam)->first();
+        
+        // $total_pembayaran = Pembayaran::where('id_peminjaman',$id)->sum('total_pembayaran');
+        // $sisapinjaman = $pinjaman->jumlah_pinjaman - $total_pembayaran;
+        // $jumlah_total_pembayaran = $total_pembayaran + $pinjaman->cicilan;
+
+        // if ($tanggal_bayar == null) {
+        //     $penambahan_waktu_jatuh_tempo = Carbon::parse($pinjaman->tanggal_pinjam)->addWeeks(1);
+        //     $tanggalpinjamataubayar = $pinjaman->tanggal_pinjam;
+        //     $jatuh_tempo =  date('Y-m-5', strtotime($penambahan_waktu_jatuh_tempo));
+        // }
+        // else {
+        //     $penambahan_waktu_jatuh_tempo = Carbon::parse($tanggal_bayar->tanggal_pembayaran)->addMonths(1);
+        //     $tanggalpinjamataubayar = $tanggal_bayar->tanggal_pembayaran;
+        //     $jatuh_tempo =  date('Y-m-5', strtotime($penambahan_waktu_jatuh_tempo));
+        // }
+
+        // $tanggal_sekarang = Carbon::now();
+        // $jumlahhariterlambat = "0";
+        // $denda = "0";
+        // if ($tanggal_sekarang > $jatuh_tempo) {
+        //     $jumlahhariterlambat = Carbon::parse($jatuh_tempo)->diffInDays($tanggal_sekarang);
+        //         $perbarui_jatuh_tempo = Peminjaman::where('id_peminjaman',$id)->update([
+        //             'jatuh_tempo' => $jatuh_tempo,
+        //             ]);
+        // }
+        
+        // if ($jumlahhariterlambat < 0) {
+        //     $jumlahhariterlambat = '0';
+        // }
+
+        // if ($total_pembayaran > $pinjaman->jumlah_pinjaman) {
+        //     $update_status = Peminjaman::where('id_peminjaman',$id)->update([
+        //         'status' => 'Lunas',
+        //         ]);
+        //     }
+            
+        //     $pembayaran = Pembayaran::create([
+        //         'id_peminjaman' => $id,
+        //         'tanggal_pembayaran' => $tanggal_sekarang,
+        //         'total_pembayaran' => $pinjaman->cicilan,
+        //         'terlambat' => $jumlahhariterlambat,
+        //     ]);
+
+        //     $id_karyawan = Karyawan::where('id_user',Auth::user()->id)->first();
+        //     $request->request->add(['id_pembayaran' => $pembayaran->id_pembayaran]);
+        //     $tanggal_penilaian = Carbon::now()->format('Y-m-d');
+        //     $penilaian = Penilaian::where('id_karyawan',$id_karyawan->id_karyawan)
+        //     ->whereMonth('tanggal_penilaian',Carbon::now()->format('m'))
+        //     ->whereYear('tanggal_penilaian',Carbon::now()->format('Y'))
+        //     ->first();
+
+        //     $penilaian_kolektif = PenilaianKolektif::join('penilaians','penilaian_kolektifs.id_penilaian','=','penilaians.id_penilaian')
+        //     ->where('id_karyawan',$id_karyawan->id_karyawan)
+        //     ->whereMonth('tanggal_penilaian',Carbon::now()->format('m'))
+        //     ->whereYear('tanggal_penilaian',Carbon::now()->format('Y'))->count();
+
+        //     if ($penilaian_kolektif == 0) {
+        //         $penilaian_kolektif = 0;
+        //     }
+
+        //     if ($tanggal_sekarang > $jatuh_tempo) {
+        //         if ($penilaian == null) {
+
+        //             $tambah_penilaian =  Penilaian::create([
+        //                 'id_karyawan' => $id_karyawan->id_karyawan,
+        //                 'tanggal_penilaian' => $tanggal_sekarang,
+        //             ]);
+            
+        //             $request->request->add(['id_penilaian' => $tambah_penilaian->id_penilaian]);
+
+        //             $kolektif = PenilaianKolektif::create([
+        //                 'id_penilaian' => $request->id_penilaian,
+        //                 'id_pembayaran' => $request->id_pembayaran,
+        //             ]);
+        //         }
+        //         elseif ($penilaian->count() >= 1) {
+        //             $kolektif = PenilaianKolektif::create([
+        //                 'id_penilaian' => $penilaian->id_penilaian,
+        //                 'id_pembayaran' => $request->id_pembayaran,
+        //             ]);
+                    
+        //         }
+        //     }
+        // return redirect('/peminjaman/rincian/'.$id)->with(['primary' => 'Pinjaman '.$anggota->nama.' ( '.$anggota->nik.' ) '.'Telah Dibayar Sebesar Rp. '.number_format($pinjaman->cicilan,0,'.','.')]);
+        
